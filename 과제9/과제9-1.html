@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>onmouseover과 onmouseout</title>
+<script>
+let text=["웹 문서의 뼈대 작성",
+          "웹 문서를 꾸미는 역할",
+          "사용자 동작에 반응"];
+let commentDiv;
+
+function init() {
+	commentDiv = document.getElementById("commentDiv");	
+
+	let liArray = document.getElementsByTagName("li");
+	for(let i=0; i<liArray.length; i++) {
+		liArray[i].addEventListener("mouseover", over, false);
+		liArray[i].addEventListener("mouseout", hideCommentDiv, false);	
+	}
+}
+
+function over(e) {
+	let n=0;
+	switch(e.target.id) {
+		case "l0" : n = 0; break;
+		case "l1" : n = 1; break;
+		case "l2" : n = 2; break;
+	}
+	setCommentDiv(text[n], e);	
+}
+
+function setCommentDiv(comment, e) {
+	commentDiv.innerHTML = comment;
+	commentDiv.style.left = e.clientX + "px";
+	commentDiv.style.top = e.clientY + "px";
+	commentDiv.style.border = "1px solid yellowgreen";
+	commentDiv.style.background = "aliceblue";
+	commentDiv.style.visibility = "visible";
+	commentDiv.style.width = "200px";
+	commentDiv.style.height = "40px";
+}
+
+function hideCommentDiv() {
+	commentDiv.style.visibility = "hidden";
+}
+
+</script>
+</head>
+<body onload="init()">
+<h3>아이템에 마우스를 올리면 설명 출력</h3>
+<hr>
+<p>웹프로그래밍</p>
+<ul>
+	<li id="l0">HTML</li>
+	<li id="l1">CSS</li>
+	<li id="l2">JavaScript</li>
+</ul> 
+<div id="commentDiv" style="position:absolute"></div>
+</body>
+</html>

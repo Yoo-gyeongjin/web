@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>라디오 버튼과 이미지 출력</title>
+<script>
+function drawImage() {
+	let found = null;
+	let sel = document.getElementsByName("fruits");
+	let img=document.getElementById("fruitimage");
+
+	for(let i=0; i<sel.length; i++){
+		if(sel[i].checked == true){
+			found = sel[i];
+			break;
+		}
+	}
+	img.src = found.value;
+}
+</script>
+</head>
+<body onload="drawImage()">
+<h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+<hr>
+<form>
+	<input type="radio" name="fruits" value="media/바나나.png" checked onchange="drawImage()">바나나
+	<input type="radio" name="fruits" value="media/망고.png" onchange="drawImage()">망고
+	<input type="radio" name="fruits" value="media/사과.png" onchange="drawImage()">사과
+	<br>
+	<img id="fruitimage" src="media/바나나.png" height="100">
+</form>
+</body>
+</html>

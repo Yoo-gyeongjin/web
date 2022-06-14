@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<title>Transform</title>
+<style>
+    @keyframes rectangle {
+        0% {transform: perspective(120px) rotate(0deg) rotate(0deg); background-color: red;}
+        50%{transform: perspective(120px) rotateX(-180deg) rotateY(0deg); background-color: green;}
+        100%{transform: perspective(120px) rotateX(-180deg) rotateY(-180deg); background-color: blue;}
+    }
+
+    div {
+        width: 120px;
+        height: 120px;
+        animation-name : rectangle;
+        animation-duration : 5s;
+        animation-iteration-count : infinite;
+        margin:100px auto;
+    }
+</style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

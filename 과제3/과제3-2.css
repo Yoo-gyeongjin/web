@@ -1,0 +1,22 @@
+.main {
+    background-color: powderblue;
+}
+
+.headline {
+    color: brown;
+    text-align: center;
+    font-size: 30px;
+}
+
+.help {
+    color: blue;
+}
+
+.message {
+    color : red;
+    font-size : 25px;
+}
+
+#hot {
+    background-color: darkorange;
+}
