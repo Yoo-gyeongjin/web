@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>포털 사이트</title>
+<script>
+function loadSite(select) {
+	let index = select.selectedIndex;
+	let site = select.options[index].value;
+	window.open(site, "myWin", "left=500,top=400,width=200,height=80");
+}
+</script>
+</head>
+<body>
+<h3>Select Option으로 포털 사이트 접속</h3>
+<hr>
+<form>
+<p>포털 사이트</p>
+<select onchange="loadSite(this)">
+	<option value="https://www.google.co.kr">Google</option>
+	<option value="https://www.naver.com">Naver</option>
+	<option value="https://www.daum.net">Daum</option>
+</select>
+</form>
+</body>
+</html>
